@@ -49,6 +49,16 @@ namespace Sitecore.Support.Publishing.WebDeploy
     }
 
     /// <summary>
+    /// Gets or sets a value indicating whether this <see cref="PublishHandler"/> is using checksums or last modification date for file comparsion.
+    /// </summary>
+    /// <value><c>true</c> if use checksum; otherwise, <c>false</c>.</value>
+    public bool UseChecksum
+    {
+      get;
+      set;
+    }
+
+    /// <summary>
     /// Adds the task.
     /// </summary>
     /// <param name="task">The task.</param>
@@ -104,7 +114,7 @@ namespace Sitecore.Support.Publishing.WebDeploy
         runner.TargetSite.Decorators.Add(new RemoteDecorator { ComputerName = task.TargetServer, UserName = task.UserName, Password = task.Password });
       }
       runner.SyncOptions.DoNotDelete = false;
-      runner.SyncOptions.UseChecksum = true;
+      runner.SyncOptions.UseChecksum = this.UseChecksum;
       runner.SourceSite.Decorators.Add(new TraceDecorator((level, message, data) => Log.Info("WebDeploy {0} : {1}".FormatWith(level, message), this)));
       runner.TargetSite.Decorators.Add(new TraceDecorator((level, message, data) => Log.Info("WebDeploy {0} : {1}".FormatWith(level, message), this)));
 
