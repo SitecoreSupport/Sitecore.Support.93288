@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Sitecore.Configuration;
 using Sitecore.Diagnostics;
 using Sitecore.Events;
 using Sitecore.Publishing;
@@ -111,7 +112,7 @@ namespace Sitecore.Support.Publishing.WebDeploy
       runner.TargetSite = new FolderDeploymentSite(task.RemoteRoot);
       if (task.TargetServer != null)
       {
-        runner.TargetSite.Decorators.Add(new RemoteDecorator { ComputerName = task.TargetServer, UserName = task.UserName, Password = task.Password });
+        runner.TargetSite.Decorators.Add(new RemoteDecorator { ComputerName = task.TargetServer, UserName = Settings.GetAppSetting("WebDeploy.UserName"), Password = Settings.GetAppSetting("WebDeploy.Password") });
       }
       runner.SyncOptions.DoNotDelete = false;
       runner.SyncOptions.UseChecksum = this.UseChecksum;
