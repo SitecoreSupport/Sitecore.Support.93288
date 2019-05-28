@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sitecore.Support</RootNamespace>
-    <AssemblyName>Sitecore.Support.93288</AssemblyName>
+    <AssemblyName>Sitecore.Support.93288.323484</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -67,7 +67,7 @@
     <Compile Include="Publishing\WebDeploy\PublishHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\zzz\Sitecore.Support.93288.config" />
+    <Content Include="App_Config\Include\zzz\Sitecore.Support.93288.323484.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
